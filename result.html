@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分析結果 - 租屋合約檢測</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col relative pb-8">
+  
+  <header class="bg-white px-5 py-4 flex items-center justify-between shadow-sm">
+    <div class="flex items-center gap-2">
+      <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+      <h1 class="font-bold text-[#2563EB]">租屋合約檢測</h1>
+    </div>
+    <a href="upload.html" class="text-sm text-gray-400 font-medium">返回</a>
+  </header>
+
+  <main class="flex-1 px-4 py-6 max-w-md mx-auto w-full bg-white mt-4 rounded-3xl shadow-sm border border-gray-50" id="result-container">
+    <div class="text-center py-10 text-gray-500">載入中...</div>
+  </main>
+
+  <footer class="mt-auto w-full p-4 text-center">
+    <p class="text-[12px] text-[#9CA3AF]">AI 分析結果僅供參考，不構成法律建議。如有疑慮，建議諮詢專業律師。</p>
+  </footer>
+
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/ui.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderResultPage();
+    });
+  </script>
+</body>
+</html>
