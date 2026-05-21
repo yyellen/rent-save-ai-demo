@@ -15,7 +15,7 @@ const MOCK_RESULT = {
   },
   risk_clauses: [
     {
-      title: '押金超收（超過法定上限）',
+      title: '押金超過法定上限',
       clause_number: '第五條',
       severity: 'illegal',
       plain_explanation:
@@ -29,7 +29,7 @@ const MOCK_RESULT = {
         '也就是 36,000 元。我想我們可以依照法規來調整，這樣對雙方都比較有保障，您覺得可以嗎？」'
     },
     {
-      title: '電費計算方式違法',
+      title: '電費計算方式',
       clause_number: '第六條',
       severity: 'illegal',
       plain_explanation:
@@ -57,14 +57,14 @@ const MOCK_RESULT = {
         '就算寫了在法律上也是無效的。我希望能把這兩條刪掉，保留我應有的合法權利，謝謝您的理解！」'
     },
     {
-      title: '逾期不遷讓須付雙倍租金違約金',
+      title: '逾期不遷讓須付二倍租金違約金',
       clause_number: '第十七條',
       severity: 'high-risk',
       plain_explanation:
-        '合約約定逾期遷讓房屋將課以雙倍租金之違約金。雖此約定具警示性質，' +
+        '合約約定逾期遷讓房屋將課以二倍租金之違約金。雖此約定具警示性質，' +
         '然若發生爭議，法院得視實際損害情形依職權酌減違約金數額。為確保權益，建議雙方得研議增列合理之搬遷寬限期。',
       legal_basis:
-        '《民法》相關規定' +
+        '《民法》相關規定：' +
         '違約金若與實際損害顯不相當，法院得依職權酌減，但仍應注意避免糾紛。',
       negotiation_script:
         '「房東您好，關於逾期未搬離要賠兩倍租金這條，我有些擔心萬一搬家公司臨時有狀況，' +
