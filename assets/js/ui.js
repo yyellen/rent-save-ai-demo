@@ -197,12 +197,12 @@ function renderResultPage() {
         if (counts['notice'] > 0) badgesHtml += `<span class="bg-yellow-500 text-white text-[11px] px-2.5 py-0.5 rounded-full ml-1 font-medium">須注意 ${counts['notice']}</span>`;
 
         html += `
-            <div class="bg-[#FEF2F2] rounded-xl p-3 flex justify-between items-center mb-6 border border-red-100">
+            <div class="bg-[#FEF2F2] rounded-xl p-3 flex flex-col gap-2 mb-6 border border-red-100">
                 <span class="text-red-600 font-bold text-sm flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     發現 ${clauses.length} 項需要注意的條款
                 </span>
-                <div class="flex">${badgesHtml}</div>
+                <div class="flex flex-wrap gap-1.5 pl-6">${badgesHtml}</div>
             </div>
             
             <h3 class="text-sm font-bold text-gray-900 mb-3 flex items-center gap-2">

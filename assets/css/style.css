@@ -6,6 +6,57 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ====== Header 品牌樣式 ====== */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+  box-shadow: 0 1px 12px rgba(37, 99, 235, 0.06);
+}
+
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  background: linear-gradient(135deg, #2563EB 0%, #4F46E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header-back-btn {
+  font-size: 13px;
+  color: #9CA3AF;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #E5E7EB;
+  background: #F9FAFB;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-back-btn:hover {
+  color: #2563EB;
+  border-color: #BFDBFE;
+  background: #EFF6FF;
+}
+
 .accordion-content {
   max-height: 0;
   overflow: hidden;

@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上傳合約 - 租屋合約檢測</title>
+  <title>上傳合約 - 租事大吉</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body class="min-h-screen flex flex-col relative pb-16">
-  
-  <header class="bg-white px-5 py-4 flex items-center justify-between shadow-sm">
-    <div class="flex items-center gap-2">
-      <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-      <h1 class="font-bold text-[#2563EB]">租屋合約檢測</h1>
-    </div>
-    <a href="index.html" class="text-sm text-gray-400 font-medium">返回</a>
+
+  <header class="site-header px-5 py-3 flex items-center justify-between">
+    <a href="index.html" class="brand-logo-wrap">
+      <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="houseGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2563EB"/>
+            <stop offset="100%" stop-color="#4F46E5"/>
+          </linearGradient>
+        </defs>
+        <path d="M16 4L3 14h3v11a1 1 0 001 1h5v-7h8v7h5a1 1 0 001-1V14h3L16 4z" fill="url(#houseGrad)"/>
+        <circle cx="23" cy="23" r="7" fill="#ffffff"/>
+        <path d="M23 17c-1.8.6-3.5.6-5 0v4.5c0 2.2 1.8 3.8 5 4.5 3.2-.7 5-2.3 5-4.5V17c-1.5.6-3.2.6-5 0z" fill="url(#houseGrad)"/>
+        <path d="M21 21.5l1.5 1.5 2.5-2.5" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-name">租事大吉</span>
+    </a>
+    <a href="index.html" class="header-back-btn">
+      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      返回
+    </a>
   </header>
 
   <main class="flex-1 px-4 py-6 max-w-md mx-auto w-full bg-white mt-4 rounded-3xl shadow-sm border border-gray-50">
-    
+
     <div id="toast-container" class="fixed top-4 left-4 right-4 z-50 flex flex-col gap-2"></div>
 
     <div class="bg-[#EFF6FF] rounded-xl p-4 flex items-center gap-4 mb-3 border border-blue-50">
       <div class="w-10 h-10 rounded-full bg-white text-[#2563EB] flex items-center justify-center shrink-0 shadow-sm">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z">
+          </path>
+        </svg>
       </div>
       <div>
         <h3 class="font-bold text-gray-900 mb-0.5">上傳合約文件</h3>
@@ -32,14 +52,18 @@
     </div>
 
     <div class="text-[12px] text-gray-500 mb-4 px-2 flex items-start gap-1.5 leading-relaxed">
-        <span>📸</span>
-        <span><strong>拍照技巧：</strong>確保光線充足、頁面攤平、避免陰影覆蓋文字</span>
+      <span>📸</span>
+      <span><strong>拍照技巧：</strong>確保光線充足、頁面攤平、避免陰影覆蓋文字</span>
     </div>
 
-    <div id="upload-zone" class="border-2 border-dashed border-gray-200 rounded-2xl bg-white p-12 text-center cursor-pointer mb-6 transition hover:border-[#2563EB] hover:bg-[#EFF6FF]">
+    <div id="upload-zone"
+      class="border-2 border-dashed border-gray-200 rounded-2xl bg-white p-12 text-center cursor-pointer mb-6 transition hover:border-[#2563EB] hover:bg-[#EFF6FF]">
       <input type="file" id="file-input" class="file-input-hidden" accept=".pdf,.jpg,.jpeg,.png" multiple>
       <div class="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-3 text-gray-600">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+        </svg>
       </div>
       <p class="font-bold text-gray-900">點擊上傳檔案</p>
       <p class="text-[13px] text-[#6B7280] mt-1">或拖曳檔案至此處</p>
@@ -55,15 +79,19 @@
         <span class="step-text">風險分析</span>
       </div>
       <div class="relative w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-        <div id="progress-bar" class="absolute top-0 left-0 h-full bg-[#2563EB] w-1/4 transition-all duration-500 rounded-full"></div>
+        <div id="progress-bar"
+          class="absolute top-0 left-0 h-full bg-[#2563EB] w-1/4 transition-all duration-500 rounded-full"></div>
       </div>
     </div>
 
-    <button id="analyze-btn" disabled class="flex items-center justify-center gap-2 w-full bg-[#93C5FD] text-white font-medium py-3.5 rounded-xl transition">
-      開始分析 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    <button id="analyze-btn" disabled
+      class="flex items-center justify-center gap-2 w-full bg-[#93C5FD] text-white font-medium py-3.5 rounded-xl transition">
+      開始分析 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      </svg>
     </button>
   </main>
-  
+
   <footer class="mt-auto w-full p-4 text-center">
     <p class="text-[12px] text-[#9CA3AF]">AI 分析結果僅供參考，不構成法律建議。如有疑慮，建議諮詢專業律師。</p>
   </footer>
@@ -71,4 +99,5 @@
   <script src="./assets/js/api.js"></script>
   <script src="./assets/js/ui.js"></script>
 </body>
+
 </html>
